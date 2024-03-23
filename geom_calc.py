@@ -1,8 +1,26 @@
 import math
+from abc import ABC, abstractmethod
 
-def area_of_circle(radius):
-    return math.pi * radius ** 2
+class GeometricFigure(ABC):
+    @abstractmethod
+    def area(self):
+        pass
 
-def area_of_triangle(a, b, c):
-    s = (a + b + c) / 2
-    return math.sqrt(s * (s - a) * (s - b) * (s - c))
+class Circle(GeometricFigure):
+    def __init__(self, radius):
+        super().__init__()
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+class Triangle(GeometricFigure):
+    def __init__(self, a, b, c):
+        super().__init__()
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def area(self):
+        s = (self.a + self.b + self.c) / 2
+        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
