@@ -1,5 +1,5 @@
 import unittest
-from geom_calc import Circle, Triangle
+from task_2.geom_calc import Circle, Triangle
 
 class TestGeometryCalculations(unittest.TestCase):
     def test_area_of_circle(self):
